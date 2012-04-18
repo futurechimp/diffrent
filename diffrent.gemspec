@@ -5,23 +5,23 @@
 
 Gem::Specification.new do |s|
   s.name = "diffrent"
-  s.version = "0.2.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dave Hrycyszyn"]
   s.date = "2012-04-18"
-  s.description = "Diffrent is a very simple way to do ActiveRecord version diffing. It provides\na convenient interface to two other libraries \n([Diffy](https://github.com/samg/diffy) and [Vestal Versions](https://github.com/laserlemon/vestal_versions)), combining their functionality. \n\nIt makes no assumption about what web framework you're using - it can be used in\nSinatra, Padrino, Rails, or with no framework at all. "
+  s.description = "Diffrent is a very simple way to do ActiveRecord version \n      diffing. It provides a convenient interface to two other libraries \n      (Diffy and Vestal Versions), combining their functionality. \n\n      It makes no assumption about what web framework you're using - it can be \n      used in Sinatra, Padrino, Rails, or with no framework at all. "
   s.email = "dave.hrycyszyn@headlondon.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.md"
+    "README"
   ]
   s.files = [
     ".document",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.md",
+    "README",
     "Rakefile",
     "VERSION",
     "diffrent.gemspec",
