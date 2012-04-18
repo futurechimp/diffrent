@@ -49,7 +49,7 @@ With this all set up, you'll get a new version every time you save a Post object
 instance. How to get the differences between arbitrary versions? This is where
 diffrent comes in. 
 
-After adding 'diffrent' to your Gemfile and running 'bundle install', you can 
+After adding `diffrent` to your Gemfile and running `bundle install`, you can 
 change your Post model so it looks like this:
 
 ```ruby
