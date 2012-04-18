@@ -44,7 +44,7 @@ class Post
 end
 ```
 
-Now you've got the ability to pick up changes between different versions of your
+This give you the ability to pick up changes between different versions of your
 Post objects. For example:
 
     > @post = Post.create(:title => "Arnold says", :body => "What you talking about, Willis?")
