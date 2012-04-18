@@ -11,11 +11,23 @@ Sinatra, Padrino, Rails, or with no framework at all.
 Installation:
 -------------
 
-    gem install diffrent
+```
+gem install diffrent
+```
 
 In a Gemfile:
 
-    gem 'diffrent'
+```ruby 
+gem 'vestal_versions', :git => "git://github.com/futurechimp/vestal_versions.git"
+gem 'diffrent'
+```
+Vestal Versions is currently a bit out of date, I've put up an updated version
+in this fork. 
+
+Padrino gotcha: when using Vestal Versions with Padrino, you'll need to put the
+`gem 'vestal_versions'` requirement *after* `gem 'padrino'` in your Gemfile.
+Vestal Versions needs ActiveRecord loaded before it can show up in a Gemfile. 
+
 
 Usage
 -----
@@ -55,14 +67,20 @@ Now we can:
 
     > @post.diff_for(:body, 1,2)
 
-    => "<div class=\"diff\">\n  <ul>\n    <li class=\"del\"><del><strong>This is w</strong>hat <strong>Willis is</strong> talking about</del></li>\n    <li class=\"ins\"><ins><strong>W</strong>hat <strong>you</strong> talking about<strong>, Willis?</strong></ins></li>\n  </ul>\n</div>\n" 
+    => "<div class=\"diff\">
+          <ul>
+            <li class=\"del\"><del><strong>This is w</strong>hat <strong>Willis is</strong> talking about</del></li>
+            <li class=\"ins\"><ins><strong>W</strong>hat <strong>you</strong> talking about<strong>, Willis?</strong></ins></li>
+          </ul>
+        </div>"
 
 By default, you'll get back HTML in your diffs. There's a final options hash 
 on the `diff_for` method call, so that you can pass a :format option to Diffy:
 
     > # get back raw text
     >   p.diff_for(:body, 1, 2, :format => :text)
-    => "-This is what Willis is talking about\n\\ No newline at end of file\n+What you talking about, Willis?\n\\ No newline at end of file\n" 
+    => "-This is what Willis is talking about
+        +What you talking about, Willis?" 
 
     > # get back coloured text
     > p.diff_for(:body, 1, 2, :format => :color)
