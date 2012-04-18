@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "diffrent"
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dave Hrycyszyn"]
@@ -14,14 +14,14 @@ Gem::Specification.new do |s|
   s.email = "dave.hrycyszyn@headlondon.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README"
+    "README.md"
   ]
   s.files = [
     ".document",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README",
+    "README.md",
     "Rakefile",
     "VERSION",
     "diffrent.gemspec",
