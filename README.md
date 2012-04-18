@@ -8,6 +8,9 @@ a convenient interface to two other libraries
 It makes no assumption about what web framework you're using - it can be used in
 Sinatra, Padrino, Rails, or with no framework at all. 
 
+For details of using Diffy and Vestal Versions, please see the docs for those
+gems.
+
 Installation:
 -------------
 
