@@ -68,7 +68,7 @@ Post objects. For example:
 
 Now we can:
 
-    > @post.diff_for(:body, 1,2)
+    > @post.diff_for(:body, 1, 2)
 
     => "<div class=\"diff\">
           <ul>
