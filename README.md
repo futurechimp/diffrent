@@ -37,10 +37,12 @@ diffrent comes in.
 After adding 'diffrent' to your Gemfile and running 'bundle install', you can 
 change your Post model so it looks like this:
 
-    class Post
-       versioned
-       include Diffrent
-    end
+```ruby
+class Post
+   versioned
+   include Diffrent
+end
+```
 
 Now you've got the ability to pick up changes between different versions of your
 Post objects. For example:
@@ -78,46 +80,49 @@ substantially the same.
 
 First, you'll need a controller action:
 
-    get :view_differences, :map => "/posts/:id/view_differences/:old/:new" do
-      @post = Post.find(params[:id])
-      render 'posts/view_differences'
-    end
+```ruby
+get :view_differences, :map => "/posts/:id/view_differences/:old/:new" do
+  @post = Post.find(params[:id])
+  render 'posts/view_differences'
+end
+```
 
 Your view code can then look like this (please excuse my awesome HTML):
 
-      <% new_version = params[:new].to_i %>
-      <% old_version = params[:old].to_i %>
+```erb
+<% new_version = params[:new].to_i %>
+<% old_version = params[:old].to_i %>
 
-      <p>Title:
-        <%= @post.diff_for(:title, old_version, new_version) %>
-      </p>
-      <p>Body:
-        <%= @post.diff_for(:body, old_version, new_version) %>
-      </p>
-      
-      <p>
-        <% if @post.has_versions_before?(new_version) %>
-            <%= link_to("<< earlier", 
-                url(:posts, :view_differences, :id => @post.to_param, 
-                    :old => new_version - 2,
-                    :new => new_version - 1)) %>
-        <% end %>
+<p>Title:
+  <%= @post.diff_for(:title, old_version, new_version) %>
+</p>
+<p>Body:
+  <%= @post.diff_for(:body, old_version, new_version) %>
+</p>
 
-        <% if @post.has_versions_after?(new_version) %>
-          <%= link_to("later >>", 
-                url(:posts, :view_differences, :id => @post.to_param, 
-                    :old => new_version,
-                    :new => new_version + 1)) %>
-        <% end %>
-      </p>
+<p>
+  <% if @post.has_versions_before?(new_version) %>
+      <%= link_to("<< earlier", 
+          url(:posts, :view_differences, :id => @post.to_param, 
+              :old => new_version - 2,
+              :new => new_version - 1)) %>
+  <% end %>
 
+  <% if @post.has_versions_after?(new_version) %>
+    <%= link_to("later >>", 
+          url(:posts, :view_differences, :id => @post.to_param, 
+              :old => new_version,
+              :new => new_version + 1)) %>
+  <% end %>
+</p>
+```
 
 As you can see, it's a bit manual - it seemed best to make very few assumptions
 about how people will want to use this. 
 
 Because of the (wonderful and simple) way that Vestal Versions works, you can 
 diff arbitrary versions using this controller action and view - for instance, 
-hitting a route like "/posts/1/view_differences/3/50" would give you a diff
+hitting a route like `/posts/1/view_differences/3/50` would give you a diff
 on the title and body for all revisions between r3 and r50. 
 
 
