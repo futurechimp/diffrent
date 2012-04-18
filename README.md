@@ -57,8 +57,8 @@ Now we can:
 
     => "<div class=\"diff\">\n  <ul>\n    <li class=\"del\"><del><strong>This is w</strong>hat <strong>Willis is</strong> talking about</del></li>\n    <li class=\"ins\"><ins><strong>W</strong>hat <strong>you</strong> talking about<strong>, Willis?</strong></ins></li>\n  </ul>\n</div>\n" 
 
-There's a final options hash on the method call, so that you can pass a format
-to Diffy:
+By default, you'll get back HTML in your diffs. There's a final options hash 
+on the `diff_for` method call, so that you can pass a :format option to Diffy:
 
     > # get back raw text
     >   p.diff_for(:body, 1, 2, :format => :text)
