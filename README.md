@@ -2,8 +2,8 @@ diffrent
 ========
 
 Diffrent is a very simple way to do ActiveRecord version diffing. It provides
-a convenient interface to two other libraries (Diffy and Vestal Versions), 
-combining their functionality. 
+a convenient interface to two other libraries 
+([Diffy](https://github.com/samg/diffy) and [Vestal Versions](https://github.com/laserlemon/vestal_versions)), combining their functionality. 
 
 It makes no assumption about what web framework you're using - it can be used in
 Sinatra, Padrino, Rails, or with no framework at all. 
@@ -21,7 +21,7 @@ Usage
 -----
 
 Let's say you've got a `Post` model, with a title and a body. You've already
-set up "Vestal Versions"[https://github.com/laserlemon/vestal_versions], and
+set up Vestal Versions, and
 your Post model looks like this:
 
     class Post
@@ -69,7 +69,7 @@ You can also pass a format of `nil` to get back a raw Diffy object if you need o
 
 Contributing to diffrent
 ------------------------
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
