@@ -17,8 +17,13 @@ Jeweler::Tasks.new do |gem|
   gem.name = "diffrent"
   gem.homepage = "http://github.com/futurechimp/diffrent"
   gem.license = "MIT"
-  gem.summary = %Q{Simple}
-  gem.description = %Q{A}
+  gem.summary = %Q{Simple ActiveRecord version diffing}
+  gem.description = %Q{Diffrent is a very simple way to do ActiveRecord version diffing. It provides
+a convenient interface to two other libraries 
+([Diffy](https://github.com/samg/diffy) and [Vestal Versions](https://github.com/laserlemon/vestal_versions)), combining their functionality. 
+
+It makes no assumption about what web framework you're using - it can be used in
+Sinatra, Padrino, Rails, or with no framework at all. }
   gem.email = "dave.hrycyszyn@headlondon.com"
   gem.authors = ["Dave Hrycyszyn"]
   # dependencies defined in Gemfile
