@@ -160,6 +160,6 @@ Contributing to diffrent
 
 == Copyright
 
-Copyright (c) 2012 Dave Hrycyszyn. See LICENSE.txt for
-further details.
+Copyright (c) 2012 Dave Hrycyszyn, http://www.headlondon.com
+See LICENSE.txt for further details.
 
