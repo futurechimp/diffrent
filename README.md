@@ -24,9 +24,11 @@ Let's say you've got a `Post` model, with a title and a body. You've already
 set up Vestal Versions, and
 your Post model looks like this:
 
-    class Post
-      versioned
-    end
+```ruby
+class Post
+  versioned
+end
+```
 
 With this all set up, you'll get a new version every time you save a Post object
 instance. How to get the differences between arbitrary versions? This is where
