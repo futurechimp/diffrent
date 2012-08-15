@@ -22,10 +22,11 @@ In a Gemfile:
 
 ```ruby 
 gem 'vestal_versions', :git => "git://github.com/futurechimp/vestal_versions.git"
+gem 'diffy'
 gem 'diffrent'
 ```
 Vestal Versions is currently a bit out of date, I've put up an updated version
-in this fork. 
+in this fork. You'll need to run the [Vestal Versions migration](https://github.com/laserlemon/vestal_versions/blob/master/lib/generators/vestal_versions/migration/templates/migration.rb) before anything will work - if you're using Rails, Vestal Versions includes a generator, if you're using Sinatra, Padrino, or standalone ActiveRecord, you should be able to just copy that migration file directly into your project.
 
 Padrino gotcha: when using Vestal Versions with Padrino, you'll need to put the
 `gem 'vestal_versions'` requirement *after* `gem 'padrino'` in your Gemfile.
